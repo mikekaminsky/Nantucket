@@ -89,7 +89,7 @@ def nsyl(word):
     # return the min syllable count in the case of multiple pronunciations
     if not word.lower() in d:
         return approx_nsyl(word)
-    return min([len([y for y in x if isdigit(y[-1])]) for x in d[word.lower()]])
+    return min([len([y for y in x if isdigit(str(y[-1]))]) for x in d[word.lower()]])
     # For example: d["concatenate".lower()] == [['K', 'AH0', 'N', 'K', 'AE1', 'T', 'AH0', 'N', 'EY2', 'T']]
     # Oh, and those numbers are actually stress/inflection (0: no stress, 1: primary stress, 2: secondary stress)
     # This grabs each item where the last character is a digit (how cmudict represents vowel sounds), and counts them
