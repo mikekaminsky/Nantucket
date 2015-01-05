@@ -99,7 +99,7 @@ def nsyl(word):
 def rhyme_from_phonemes(list1, list2):
     i = -1
     while i >= 0 - len(list1):
-        if isdigit(list1[i][-1]):
+        if isdigit(str(list1[i][-1])):
             if i >= 0 - len(list2) and list1[i][:-1] == list2[i][:-1] and (i == -1 or list1[i + 1:] == list2[i + 1:]):
                 return True
             else:
